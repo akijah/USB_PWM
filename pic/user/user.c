@@ -81,14 +81,14 @@ void ProcessIO(void)
 
 //    BlinkUSBStatus();
     // User Application USB tasks
-    if((usb_device_state < CONFIGURED_STATE)||(UCONbits.SUSPND==1)){LED_1_On(); return;}
+    if((usb_device_state < CONFIGURED_STATE)||(UCONbits.SUSPND==1)){ return;}//LED_1_On();
     
 
 		
 	//  if(wait == 0)wait = 10000U;
 //     wait--;
 //	if(wait==0)
-	{
+//	{
 /*	 LED_1_Toggle();
 	 an1._word =0;	
 	 LoadDAC8522_A(an1);
@@ -101,28 +101,14 @@ void ProcessIO(void)
 
 	if(getsUSBUSART(input_buffer, 64))
 	{	Len=mCDCGetRxLength();
-		if(Len>=3)
-        { //an1._word=(input_buffer[0]<<8)+input_buffer[1];
-  		   an1.HighB._byte=input_buffer[0];
-		   an1.LowB._byte=input_buffer[1];
-           LED_1_On();
-        } 
-		else	LED_1_Off();	
-	
-    //	if(mUSBUSARTIsTxTrfReady())
-    //	{
-      //    mUSBUSARTTxRam((byte*)input_buffer,Len);
-//
-
-    }
-	wait--;
-    if(wait==0)
-	{ LED_2_Toggle(); 
- 	  wait=80;	
-
-	}
-    if(Switch2IsPressed())  LED_1_Toggle();  
-   
+		if(Len>0)
+        { LED_1_Toggle();
+		  if(mUSBUSARTIsTxTrfReady())
+    	  {    mUSBUSARTTxRam((byte*)input_buffer,Len);
+			
+		  }
+	     if(Switch2IsPressed())  LED_1_Toggle();  
+     }
 
 			
 /*************
