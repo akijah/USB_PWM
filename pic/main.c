@@ -98,11 +98,18 @@ void USBTasks(void);
 
 /** V E C T O R  R E M A P P I N G *******************************************/
 extern void _startup (void);        // See c018i.c in your C18 compiler dir
+void  High_ISR(void);
 #pragma code _RESET_INTERRUPT_VECTOR = 0x000800
 void _reset (void)
 {
     _asm goto _startup _endasm
 }
+
+#pragma code HIGH_INTERRUPT_VECTOR =0x08
+	void Remapped_High_ISR (void){ _asm goto High_ISR _endasm }
+
+
+
 #pragma code
 
 /** D E C L A R A T I O N S **************************************************/
@@ -185,5 +192,9 @@ void USBTasks(void)
     #endif
 
 }// end USBTasks
+
+
+//****************************************************************
+
 
 /** EOF main.c ***************************************************************/

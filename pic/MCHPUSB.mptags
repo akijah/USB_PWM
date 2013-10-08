@@ -24,8 +24,8 @@ BD_STAT	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	72;"	t	line:72
 BOOL	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	114;"	t	line:114
 BSTALL	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	50;"	m	line:50	struct:_BD_STAT::<anonymous>
 BYTE	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	22;"	t	line:22
-BlinkUSBStatus	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	21;"	p	line:21	file:	signature:(void)
-BlinkUSBStatus	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	364;"	f	line:364	signature:(void)
+BlinkUSBStatus	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	24;"	p	line:24	file:	signature:(void)
+BlinkUSBStatus	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	409;"	f	line:409	signature:(void)
 Byte0	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	34;"	m	line:34	struct:_WORD::<anonymous>
 Byte0	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	67;"	m	line:67	struct:_DWORD::<anonymous>
 Byte1	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	35;"	m	line:35	struct:_WORD::<anonymous>
@@ -72,10 +72,10 @@ ClearArray	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.c	696;"	f	li
 ClearArray	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.h	169;"	p	line:169	signature:(byte* startAdr,byte count)
 Cnt	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	79;"	m	line:79	struct:_BDT::<anonymous>
 CtrlTrfData	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.c	269;"	v	line:269
-DAC_CS::LATBbits.LATB2	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	97;"	d	line:97
-DAC_LDA::LATCbits.LATC1	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	99;"	d	line:99
-DAC_LDB::LATCbits.LATC0	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	100;"	d	line:100
-DAC_RS::LATCbits.LATC2	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	98;"	d	line:98
+DAC_CS::LATBbits.LATB2	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	108;"	d	line:108
+DAC_LDA::LATCbits.LATC1	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	110;"	d	line:110
+DAC_LDB::LATCbits.LATC0	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	111;"	d	line:111
+DAC_RS::LATCbits.LATC2	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	109;"	d	line:109
 DATA_INTF::0x0A	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	79;"	d	line:79
 DEFAULT_STATE::3	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	24;"	d	line:24
 DETACHED_STATE::0	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	21;"	d	line:21
@@ -101,6 +101,7 @@ DTS	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	54;"	m	line:54	struct:_
 DTSEN	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	51;"	m	line:51	struct:_BD_STAT::<anonymous>
 DWORD	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	81;"	t	line:81
 DataDir	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_ep0_buff.h	49;"	m	line:49	struct:_CTRL_TRF_SETUP::<anonymous>
+Delay::(x)x*1.4997	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	12;"	d	line:12	file:
 ENDPOINT_HALT::0x00	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usb9\usb9.h	27;"	d	line:27
 EP00_IN::((0x00<<3)|(IN<<2))	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.h	46;"	d	line:46
 EP00_OUT::((0x00<<3)|(OUT<<2))	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.h	45;"	d	line:45
@@ -141,18 +142,18 @@ EP_CTRL::0x06	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.h	23;"	d	
 EP_IN::0x0A	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.h	25;"	d	line:25
 EP_OUT::0x0C	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.h	24;"	d	line:24
 EP_OUT_IN::0x0E	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.h	26;"	d	line:26
-Exercise_01	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	192;"	f	line:192	signature:(void)
-Exercise_01	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	27;"	p	line:27	file:	signature:(void)
-Exercise_02	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	217;"	f	line:217	signature:(void)
-Exercise_02	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	28;"	p	line:28	file:	signature:(void)
-Exercise_03	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	243;"	f	line:243	signature:(void)
-Exercise_03	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	29;"	p	line:29	file:	signature:(void)
-Exercise_04	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	262;"	f	line:262	signature:(void)
-Exercise_04	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	30;"	p	line:30	file:	signature:(void)
-Exercise_05	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	290;"	f	line:290	signature:(void)
-Exercise_05	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	31;"	p	line:31	file:	signature:(void)
-Exercise_Example	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	155;"	f	line:155	signature:(void)
-Exercise_Example	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	25;"	p	line:25	file:	signature:(void)
+Exercise_01	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	237;"	f	line:237	signature:(void)
+Exercise_01	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	30;"	p	line:30	file:	signature:(void)
+Exercise_02	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	262;"	f	line:262	signature:(void)
+Exercise_02	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	31;"	p	line:31	file:	signature:(void)
+Exercise_03	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	288;"	f	line:288	signature:(void)
+Exercise_03	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	32;"	p	line:32	file:	signature:(void)
+Exercise_04	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	307;"	f	line:307	signature:(void)
+Exercise_04	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	33;"	p	line:33	file:	signature:(void)
+Exercise_05	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	335;"	f	line:335	signature:(void)
+Exercise_05	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	34;"	p	line:34	file:	signature:(void)
+Exercise_Example	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	200;"	f	line:200	signature:(void)
+Exercise_Example	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	28;"	p	line:28	file:	signature:(void)
 FAIL::FALSE	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	117;"	d	line:117
 FALSE	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	114;"	e	line:114	enum:_BOOL
 GET_CFG::8	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usb9\usb9.h	19;"	d	line:19
@@ -162,20 +163,27 @@ GET_ENCAPSULATED_RESPONSE::0x01	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class
 GET_INTF::10	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usb9\usb9.h	21;"	d	line:21
 GET_LINE_CODING::0x21	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	52;"	d	line:52
 GET_STATUS::0	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usb9\usb9.h	13;"	d	line:13
+HH	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	17;"	v	line:17
 HOST_TO_DEV::0	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbctrltrf\usbctrltrf.h	39;"	d	line:39
 HSHK_EN::0x10	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.h	27;"	d	line:27
 HighB	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	40;"	m	line:40	struct:_WORD::<anonymous>
+High_ISR	J:\PROJECTS\PIC_USB\USB_PWM\pic\main.c	101;"	p	line:101	file:	signature:(void)
+High_ISR	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	481;"	f	line:481	signature:(void)
 IN::1	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.h	40;"	d	line:40
 INCDIS	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	52;"	m	line:52	struct:_BD_STAT::<anonymous>
 INPUT_PIN::1	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	8;"	d	line:8
 IN_TOKEN::0b00001001	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbctrltrf\usbctrltrf.h	36;"	d	line:36
 IO_CFG_H	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	2;"	d	line:2
+Imp0	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	15;"	v	line:15
+Imp1	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	15;"	v	line:15
+Imp2	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	15;"	v	line:15
 InitAllLEDs::LATC&=0xF9;TRISC&=0xF9;	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	67;"	d	line:67
 InitTempSensor	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\temperature.c	71;"	f	line:71	signature:(void)
-InitializeSystem	J:\PROJECTS\PIC_USB\USB_PWM\pic\main.c	123;"	f	line:123	file:	signature:(void)
+InitializePWM	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	23;"	p	line:23	file:	signature:(void)
+InitializePWM	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	68;"	f	line:68	signature:(void)
 InitializeSystem	J:\PROJECTS\PIC_USB\USB_PWM\pic\main.c	96;"	p	line:96	file:	signature:(void)
-InitializeUSART	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	20;"	p	line:20	file:	signature:(void)
-InitializeUSART	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	55;"	f	line:55	signature:(void)
+InitializeUSART	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	22;"	p	line:22	file:	signature:(void)
+InitializeUSART	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	97;"	f	line:97	signature:(void)
 KEN	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	53;"	m	line:53	struct:_BD_STAT::<anonymous>
 LED_1::LATCbits.LATC1	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	68;"	d	line:68
 LED_1_Off::LED_1=0;	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	72;"	d	line:72
@@ -185,18 +193,18 @@ LED_2::LATCbits.LATC2	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	69;"	d	line:69
 LED_2_Off::LED_2=0;	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	75;"	d	line:75
 LED_2_On::LED_2=1;	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	74;"	d	line:74
 LED_2_Toggle::LED_2=!LED_2;	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	76;"	d	line:76
-LED_Both_Off::{LED_1_Off;LED_2_Off;}	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	371;"	d	line:371	file:
-LED_Both_On::{LED_1_On;LED_2_On;}	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	372;"	d	line:372	file:
-LED_Only_1_On::{LED_1_On;LED_2_Off;}	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	373;"	d	line:373	file:
-LED_Only_2_On::{LED_1_Off;LED_2_On;}	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	374;"	d	line:374	file:
+LED_Both_Off::{LED_1_Off;LED_2_Off;}	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	416;"	d	line:416	file:
+LED_Both_On::{LED_1_On;LED_2_On;}	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	417;"	d	line:417	file:
+LED_Only_1_On::{LED_1_On;LED_2_Off;}	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	418;"	d	line:418	file:
+LED_Only_2_On::{LED_1_Off;LED_2_On;}	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	419;"	d	line:419	file:
 LINE_CODING	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	277;"	t	line:277
 LINE_CODING_LENGTH::0x07	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	262;"	d	line:262
 LOWER_LSB::(a)((a).v[0])	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	82;"	d	line:82
 LOWER_MSB::(a)((a).v[1])	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	83;"	d	line:83
 LSB::(a)((a).v[0])	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	47;"	d	line:47
-Len	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	79;"	l	line:79
-LoadDAC8522_A	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	135;"	f	line:135	signature:(WORD Val)
-LoadDAC8522_A	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	33;"	p	line:33	file:	signature:(WORD Val)
+Len	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	121;"	l	line:121
+LoadDAC8522_A	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	180;"	f	line:180	signature:(WORD Val)
+LoadDAC8522_A	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	36;"	p	line:36	file:	signature:(WORD Val)
 LowB	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	39;"	m	line:39	struct:_WORD::<anonymous>
 MAX_EP_NUMBER::3	J:\PROJECTS\PIC_USB\USB_PWM\pic\autofiles\usbcfg.h	72;"	d	line:72
 MAX_NUM_INT::1	J:\PROJECTS\PIC_USB\USB_PWM\pic\autofiles\usbcfg.h	5;"	d	line:5
@@ -222,7 +230,15 @@ PID2	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	62;"	m	line:62	struct:
 PID3	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	63;"	m	line:63	struct:_BD_STAT::<anonymous>
 POINTER	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	112;"	t	line:112
 POWERED_STATE::2	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	23;"	d	line:23
-ProcessIO	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	75;"	f	line:75	signature:(void)
+PWM_1::LATCbits.LATC2	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	93;"	d	line:93
+PWM_1_Off::PWM_1=0;	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	97;"	d	line:97
+PWM_1_On::PWM_1=1;	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	96;"	d	line:96
+PWM_1_Toggle::PWM_1=!PWM_1;	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	98;"	d	line:98
+PWM_2::LATBbits.LATB3	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	94;"	d	line:94
+PWM_2_Off::PWM_2=0;	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	100;"	d	line:100
+PWM_2_On::PWM_2=1;	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	99;"	d	line:99
+PWM_2_Toggle::PWM_2=!PWM_2;	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	101;"	d	line:101
+ProcessIO	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	117;"	f	line:117	signature:(void)
 ProcessIO	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.h	6;"	p	line:6	signature:(void)
 RCPT_DEV::0	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbctrltrf\usbctrltrf.h	46;"	d	line:46
 RCPT_EP::2	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbctrltrf\usbctrltrf.h	48;"	d	line:48
@@ -230,10 +246,11 @@ RCPT_INTF::1	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbctrltrf\usbctrltrf.h	
 RCPT_OTH::3	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbctrltrf\usbctrltrf.h	49;"	d	line:49
 RESPONSE_AVAILABLE::0x01	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	61;"	d	line:61
 Recipient	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_ep0_buff.h	47;"	m	line:47	struct:_CTRL_TRF_SETUP::<anonymous>
+Remapped_High_ISR	J:\PROJECTS\PIC_USB\USB_PWM\pic\main.c	109;"	f	line:109	signature:(void)
 RemoteWakeup	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	39;"	m	line:39	struct:_USB_DEVICE_STATUS::<anonymous>
 RequestType	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_ep0_buff.h	48;"	m	line:48	struct:_CTRL_TRF_SETUP::<anonymous>
-ResetDAC8522	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	146;"	f	line:146	signature:(void)
-ResetDAC8522	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	32;"	p	line:32	file:	signature:(void)
+ResetDAC8522	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	191;"	f	line:191	signature:(void)
+ResetDAC8522	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	35;"	p	line:35	file:	signature:(void)
 SEND_BREAK::0x23	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	54;"	d	line:54
 SEND_ENCAPSULATED_COMMAND::0x00	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	46;"	d	line:46
 SERIAL_STATE::0x20	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	62;"	d	line:62
@@ -253,8 +270,8 @@ STANDARD::0x00	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbctrltrf\usbctrltrf.
 SYNCH_FRAME::12	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usb9\usb9.h	23;"	d	line:23
 SetupPkt	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.c	268;"	v	line:268
 Stat	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.h	78;"	m	line:78	struct:_BDT::<anonymous>
-Switch2IsPressed	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	22;"	p	line:22	file:	signature:(void)
-Switch2IsPressed	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	422;"	f	line:422	signature:(void)
+Switch2IsPressed	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	25;"	p	line:25	file:	signature:(void)
+Switch2IsPressed	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	467;"	f	line:467	signature:(void)
 TRUE	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	114;"	e	line:114	enum:_BOOL
 TYPEDEFS_H	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	2;"	d	line:2
 UCFG_VAL::_PUEN|_TRINT|_FS|MODE_PP	J:\PROJECTS\PIC_USB\USB_PWM\pic\autofiles\usbcfg.h	13;"	d	line:13
@@ -318,7 +335,6 @@ USBStdSetCfgHandler	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usb9\usb9.c	180;"
 USBStdSetCfgHandler	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usb9\usb9.c	48;"	p	line:48	file:	signature:(void)
 USBSuspend	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.c	325;"	f	line:325	signature:(void)
 USBSuspend	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.c	52;"	p	line:52	file:	signature:(void)
-USBTasks	J:\PROJECTS\PIC_USB\USB_PWM\pic\main.c	174;"	f	line:174	signature:(void)
 USBTasks	J:\PROJECTS\PIC_USB\USB_PWM\pic\main.c	97;"	p	line:97	file:	signature:(void)
 USBWakeFromSuspend	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.c	383;"	f	line:383	signature:(void)
 USBWakeFromSuspend	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.c	53;"	p	line:53	file:	signature:(void)
@@ -342,7 +358,7 @@ USB_USE_CDC	J:\PROJECTS\PIC_USB\USB_PWM\pic\autofiles\usbcfg.h	41;"	d	line:41
 USER_H	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.h	2;"	d	line:2
 UpdateCelsiusASCII	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\temperature.c	126;"	f	line:126	signature:(void)
 UpdateCelsiusASCII	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\temperature.c	177;"	f	line:177	signature:(void)
-UserInit	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	36;"	f	line:36	signature:(void)
+UserInit	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	39;"	f	line:39	signature:(void)
 UserInit	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.h	5;"	p	line:5	signature:(void)
 V25TER::0x01	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	75;"	d	line:75
 VENDOR::0x02	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbctrltrf\usbctrltrf.h	44;"	d	line:44
@@ -454,7 +470,7 @@ _byte5	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_ep0_buff.h	156
 _byte6	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_ep0_buff.h	157;"	m	line:157	struct:_CTRL_TRF_DATA::<anonymous>
 _byte7	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_ep0_buff.h	158;"	m	line:158	struct:_CTRL_TRF_DATA::<anonymous>
 _dword	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	52;"	m	line:52	union:_DWORD
-_reset	J:\PROJECTS\PIC_USB\USB_PWM\pic\main.c	102;"	f	line:102	signature:(void)
+_reset	J:\PROJECTS\PIC_USB\USB_PWM\pic\main.c	103;"	f	line:103	signature:(void)
 _startup	J:\PROJECTS\PIC_USB\USB_PWM\pic\main.c	100;"	p	line:100	file:	signature:(void)
 _word	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	26;"	m	line:26	union:_WORD
 _word	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	97;"	m	line:97	union:_POINTER
@@ -462,9 +478,7 @@ _word0	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_ep0_buff.h	162
 _word1	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_ep0_buff.h	163;"	m	line:163	struct:_CTRL_TRF_DATA::<anonymous>
 _word2	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_ep0_buff.h	164;"	m	line:164	struct:_CTRL_TRF_DATA::<anonymous>
 _word3	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_ep0_buff.h	165;"	m	line:165	struct:_CTRL_TRF_DATA::<anonymous>
-an1	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	15;"	v	line:15
-an2	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	15;"	v	line:15
-ansi_clrscr	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	17;"	v	line:17
+ansi_clrscr	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	19;"	v	line:19
 b0	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	13;"	m	line:13	struct:_BYTE::<anonymous>
 b1	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	14;"	m	line:14	struct:_BYTE::<anonymous>
 b2	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	15;"	m	line:15	struct:_BYTE::<anonymous>
@@ -607,7 +621,7 @@ ep8Bi	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.c	215;"	v	line:215
 ep8Bo	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.c	214;"	v	line:214
 ep9Bi	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.c	220;"	v	line:220
 ep9Bo	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbmmap.c	219;"	v	line:219
-ex02_string	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	216;"	v	line:216
+ex02_string	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	261;"	v	line:261
 getsUSBUSART	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.c	239;"	f	line:239	signature:(char *buffer, byte len)
 getsUSBUSART	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	352;"	p	line:352	signature:(char *buffer, byte len)
 i	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbctrltrf\usbctrltrf.c	164;"	l	line:164
@@ -620,7 +634,7 @@ iSerialNum	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_std_dsc.h	
 idProduct	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_std_dsc.h	90;"	m	line:90	struct:_USB_DEV_DSC
 idVendor	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_std_dsc.h	90;"	m	line:90	struct:_USB_DEV_DSC
 input_buffer	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	13;"	v	line:13
-led_count	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	366;"	l	line:366	file:
+led_count	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	411;"	l	line:411	file:
 len	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.c	298;"	l	line:298
 len	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.c	379;"	l	line:379
 line_coding	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.c	54;"	v	line:54
@@ -628,9 +642,10 @@ mCDCGetRxLength::cdc_rx_len	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc
 mCDCUsartRxIsBusy::CDC_BULK_BD_OUT.Stat.UOWN	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	149;"	d	line:149
 mCDCUsartTxIsBusy::CDC_BULK_BD_IN.Stat.UOWN	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	168;"	d	line:168
 mDisableEP1to15::ClearArray((byte*)&UEP1,15);	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.h	121;"	d	line:121
-mInitDACports::TRISC&=0x78;LATC|=0x87;TRISB&=	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	96;"	d	line:96
-mInitPOT::TRISAbits.TRISA0=1;ADCON0=0x01	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	93;"	d	line:93
-mInitSPI::SSPSTAT=0x00;SSPCON1=0x30;ADCO	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	104;"	d	line:104
+mInitDACports::TRISC&=0x78;LATC|=0x87;TRISB&=	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	107;"	d	line:107
+mInitPOT::TRISAbits.TRISA0=1;ADCON0=0x01	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	104;"	d	line:104
+mInitPWM::TRISCbits.TRISC2=0;TRISBbits.T	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	92;"	d	line:92
+mInitSPI::SSPSTAT=0x00;SSPCON1=0x30;ADCO	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	115;"	d	line:115
 mInitSwitch2::TRISBbits.TRISB2=1;	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	86;"	d	line:86
 mInitializeUSBDriver::{UCFG=UCFG_VAL;	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.h	102;"	d	line:102
 mUSBBufferReady::(buffer_dsc)	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdrv\usbdrv.h	157;"	d	line:157
@@ -638,7 +653,6 @@ mUSBCheckAdrPendingState::if(usb_device_state==ADR_PENDI	J:\PROJECTS\PIC_USB\USB
 mUSBUSARTIsTxTrfReady::(cdc_trf_state==CDC_TX_READY)	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	130;"	d	line:130
 mUSBUSARTTxRam::(pData,len)	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	222;"	d	line:222
 mUSBUSARTTxRom::(pData,len)	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	257;"	d	line:257
-main	J:\PROJECTS\PIC_USB\USB_PWM\pic\main.c	111;"	f	line:111	signature:(void)
 old_sw2	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	11;"	v	line:11
 old_sw3	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	11;"	v	line:11
 output_buffer	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	14;"	v	line:14
@@ -649,7 +663,7 @@ pFunc	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	87;"	t	line:87
 pSrc	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbctrltrf\usbctrltrf.c	48;"	v	line:48
 putrsUSBUSART	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.c	377;"	f	line:377	signature:(const rom char *data)
 putrsUSBUSART	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	353;"	p	line:353	signature:(const rom char *data)
-putsUSART	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	66;"	f	line:66	signature:(char *data)
+putsUSART	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	108;"	f	line:108	signature:(char *data)
 putsUSBUSART	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.c	296;"	f	line:296	signature:(char *data)
 putsUSBUSART	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\class\cdc\cdc.h	354;"	p	line:354	signature:(char *data)
 sd000	J:\PROJECTS\PIC_USB\USB_PWM\pic\autofiles\usbdsc.c	247;"	v	line:247
@@ -658,11 +672,14 @@ sd002	J:\PROJECTS\PIC_USB\USB_PWM\pic\autofiles\usbdsc.c	255;"	v	line:255
 self_power::1	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	27;"	d	line:27
 setup_cnt	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbctrltrf\usbctrltrf.c	625;"	l	line:625
 short_pkt_status	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbctrltrf\usbctrltrf.c	66;"	v	line:66
-start_up_state	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	157;"	l	line:157	file:
+start_up_state	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	202;"	l	line:202	file:
 string	J:\PROJECTS\PIC_USB\USB_PWM\pic\autofiles\usbdsc.c	247;"	m	line:247	file:
 string	J:\PROJECTS\PIC_USB\USB_PWM\pic\autofiles\usbdsc.c	250;"	m	line:250	file:
 string	J:\PROJECTS\PIC_USB\USB_PWM\pic\autofiles\usbdsc.c	255;"	m	line:255	file:
 sw2::PORTBbits.RB2	J:\PROJECTS\PIC_USB\USB_PWM\pic\io_cfg.h	88;"	d	line:88
+t0	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	16;"	v	line:16
+t1	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	16;"	v	line:16
+t2	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	16;"	v	line:16
 temp	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\temperature.c	128;"	l	line:128
 tempString	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\temperature.c	48;"	v	line:48
 temperature	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\temperature.c	47;"	v	line:47
@@ -682,8 +699,8 @@ wRam	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	103;"	m	line:103	union:_P
 wRom	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	107;"	m	line:107	union:_POINTER
 wTotalLength	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_std_dsc.h	100;"	m	line:100	struct:_USB_CFG_DSC
 wValue	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\usb\usbdefs\usbdefs_ep0_buff.h	33;"	m	line:33	struct:_CTRL_TRF_SETUP::<anonymous>
-wait	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	77;"	l	line:77	file:
-welcome	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	16;"	v	line:16
+wait	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	119;"	l	line:119	file:
+welcome	J:\PROJECTS\PIC_USB\USB_PWM\pic\user\user.c	18;"	v	line:18
 word	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	5;"	t	line:5
 word0	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	62;"	m	line:62	struct:_DWORD::<anonymous>
 word1	J:\PROJECTS\PIC_USB\USB_PWM\pic\system\typedefs.h	63;"	m	line:63	struct:_DWORD::<anonymous>

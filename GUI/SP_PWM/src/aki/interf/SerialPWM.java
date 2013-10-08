@@ -10,43 +10,52 @@ package aki.interf;
 
 import jssc.*;
 //import jssc.SerialPortException;
-public class SerialPWM {
-
-	/**
-	 * 
-	 */
+//------------------------------------------------------------------------------------------
+public class SerialPWM 
+{
 	private String[] portNames;
 	static SerialPort serialPort;
 	 byte[] buffer;
+	private boolean isOpen; 
 	
 	public SerialPWM()
 	{	portNames = SerialPortList.getPortNames();
-    	for(int i = 0; i < portNames.length; i++)
-    	System.out.println((i+1)+" "+portNames[i]);
+    	//for(int i = 0; i < portNames.length; i++)
+    	//System.out.println((i+1)+" "+portNames[i]);
+		isOpen=false;
     	
-    	serialPort= new SerialPort(portNames[1]);
-    	try {
-            serialPort.openPort();//Open serial port
-            serialPort.setParams(SerialPort.BAUDRATE_9600, 
-                                 SerialPort.DATABITS_8,
-                                 SerialPort.STOPBITS_1,
-                                 SerialPort.PARITY_NONE);//Set params. Also you can set params by this string: serialPort.setParams(9600, 8, 1, 0);
-            int mask = SerialPort.MASK_RXCHAR + SerialPort.MASK_CTS + SerialPort.MASK_DSR;//Prepare mask
-            serialPort.setEventsMask(mask);//Set mask
-            serialPort.addEventListener(new SerialPortReader());//Add SerialPortEventListener
-            
-            
-            //serialPort.writeBytes("This is a test string".getBytes());//Write data to port
-            //serialPort.closePort();//Close serial port
-        }
-        catch (SerialPortException ex) 
-        {
-            System.out.println(ex);
-        }
+    	
 	}
-
+//----------------------------------------------------------------------------------------
+	public boolean OpenPort(String Name)
+	{	if(isOpen) return false;
+		serialPort=new SerialPort(Name);
+		try {
+				serialPort.openPort();//Open serial port
+				serialPort.setParams(SerialPort.BAUDRATE_9600, 
+                             SerialPort.DATABITS_8,
+                             SerialPort.STOPBITS_1,
+                             SerialPort.PARITY_NONE);//Set params. Also you can set params by this string: serialPort.setParams(9600, 8, 1, 0);
+				int mask = SerialPort.MASK_RXCHAR + SerialPort.MASK_CTS + SerialPort.MASK_DSR;//Prepare mask
+				serialPort.setEventsMask(mask);//Set mask
+				serialPort.addEventListener(new SerialPortReader());//Add SerialPortEventListener
+				isOpen=true;
+        
+            }
+		catch (SerialPortException ex) 
+		{
+			System.out.println(ex);
+			isOpen=false;
+		}
+		return isOpen;
+	}	
+//---------------------------------------------------------------------------------------	
+	public boolean IsOpen(){return isOpen;}
+//---------------------------------------------------------------------------------------	
+	public String[] getPorts()	{ return portNames;	}	
+//----------------------------------------------------------------------------------------	
 	public boolean WriteB(byte K)
-	{
+	{	if(!isOpen) return false;
 		try {
 			  serialPort.writeByte(K);
 			  return true;
@@ -57,9 +66,9 @@ public class SerialPWM {
 			}
 		
 	}
-	
+//--------------------------------------------------------------------------------------	
 	public int ReadB()
-	{
+	{	if(!isOpen) return 0;
 		try {
 				buffer=serialPort.readBytes(10);
 				return buffer.length; 
@@ -70,18 +79,25 @@ public class SerialPWM {
 			}
 		
 	}
-	
+//--------------------------------------------------------------------------------------	
 	public boolean ClosePort()
-	{   try {
-		return serialPort.closePort();//Close serial port
+	{   if(!isOpen) return false;
+		try 
+		{
+		 serialPort.closePort();//Close serial port
+		
 		}
 		catch (SerialPortException ex) 
 		{        System.out.println(ex);
 				 return false;
 		}
+		serialPort=null;
+		isOpen=false;
+		return true;
+		
 	}
 	
-	
+//--------------------------------------------------------------------------------------	
 	
 	
 	

@@ -9,15 +9,18 @@
 /** V A R I A B L E S ********************************************************/
 #pragma udata
 byte old_sw2,old_sw3;
-
+#define Delay(x)  x*1.4997
 char input_buffer[64];
 char output_buffer[64];
-WORD  an1,an2;
+WORD  Imp0,Imp1,Imp2;
+WORD  t0,t1,t2;
+byte HH;
 rom char welcome[]={"Full-Speed USB - CDC RS-232 Emulation Demo\r\n\r\n"};
 rom char ansi_clrscr[]={"\x1b[2J"};         // ANSI Clear Screen Command
 
 /** P R I V A T E  P R O T O T Y P E S ***************************************/
 void InitializeUSART(void);
+void InitializePWM(void);
 void BlinkUSBStatus(void);
 BOOL Switch2IsPressed(void);
 //BOOL Switch3IsPressed(void);
@@ -39,6 +42,16 @@ void UserInit(void)
 	mInitSwitch2(); 
  // mInitAllSwitches();
     old_sw2 = sw2;
+	
+	InitializePWM();
+	//Per._word=Delay(20000);//35542; //œÂËÓ‰ 20ÏÒ
+	Imp0._word=Delay(1500);
+	Imp1._word=Delay(1000);
+	Imp2._word=Delay(20000)-Imp0._word-Imp1._word;
+	t0._word=0xFFFF-Imp0._word;
+	t1._word=0xFFFF-Imp1._word;
+	t2._word=0xFFFF-Imp2._word;
+	HH=0;
 //	mInitDACports();
 //	OpenSPI(SPI_FOSC_4, MODE_11, SMPMID);
 //	ResetDAC8522();
@@ -52,6 +65,35 @@ void UserInit(void)
 
 }//end UserInit
 //================================================================================
+void InitializePWM(void)
+{	mInitPWM();
+//pwm hardware
+	//CCP1CON=0x3C; //bit5,4 LSbs
+	//CCPR1L=0x80;
+//timer 2 1:1 1:1 1,33us-21,3us
+//timer 2 1:16 1:16 21us-5ms	
+/*	//PR2=0xFF;
+	T2CON=0x7E;
+	PIR1bits.TMR2IF=0;
+	IPR1bits.TMR2IP=1;
+	PIE1bits.TMR2IE=1;
+*/
+
+//timer3 1:1
+//timer3 1:8  43,7ms
+	T3CON=0xB1; //1:8
+//	TMR3H=0xff;
+//	TMR3L=0xff;
+	PIR2bits.TMR3IF=0;
+	IPR2bits.TMR3IP=1;
+	PIE2bits.TMR3IE=1;
+
+	RCONbits.IPEN=1;
+	INTCONbits.GIEH=1;
+	
+
+}
+//-----------------------------------------------------------------------------
 void InitializeUSART(void)
 {
     TRISCbits.TRISC7=1; // RX
@@ -78,7 +120,7 @@ void ProcessIO(void)
 //	static byte K=0;
 	byte	Len;
  //  	char input_buffer[65];
-
+	//PWM_1_Toggle();		
 //    BlinkUSBStatus();
     // User Application USB tasks
     if((usb_device_state < CONFIGURED_STATE)||(UCONbits.SUSPND==1)){ return;}//LED_1_On();
@@ -89,24 +131,27 @@ void ProcessIO(void)
 //     wait--;
 //	if(wait==0)
 //	{
-/*	 LED_1_Toggle();
-	 an1._word =0;	
-	 LoadDAC8522_A(an1);
-	 an1._word =256;
-	 LoadDAC8522_A(an1);
-	 an1._word =512;
-	 LoadDAC8522_A(an1);
-	 an1._word =1023;
-	 LoadDAC8522_A(an1);*/
+
 
 	if(getsUSBUSART(input_buffer, 64))
 	{	Len=mCDCGetRxLength();
 		if(Len>0)
-        { LED_1_Toggle();
-		  if(mUSBUSARTIsTxTrfReady())
-    	  {    mUSBUSARTTxRam((byte*)input_buffer,Len);
+        { //PR2=input_buffer[0];
+		  Imp0._word=Delay(input_buffer[0]*10+1000);
+		  Imp2._word=Delay(20000)-Imp0._word-Imp1._word;
+	t0._word=0xFFFF-Imp0._word;
+	t1._word=0xFFFF-Imp1._word;
+	t2._word=0xFFFF-Imp2._word;
+
+
+
+			//TMR3H=input_buffer[1];
+		  //TMR3L=input_buffer[0];			
+			LED_1_Toggle();
+		 // if(mUSBUSARTIsTxTrfReady())
+    	 // {    mUSBUSARTTxRam((byte*)input_buffer,Len);
 			
-		  }
+		 // }
 	     if(Switch2IsPressed())  LED_1_Toggle();  
      }
 
@@ -429,6 +474,36 @@ BOOL Switch2IsPressed(void)
     }//end if
     return FALSE;                       // Was not pressed
 }//end Switch2IsPressed
+
+//--------------------------------------------------------
+#pragma interrupt High_ISR
+
+void  High_ISR(void)	// œ–≈–€¬¿Õ»≈
+{		PIR2bits.TMR3IF=0;
+		switch(HH)
+		{case 0:	PWM_1_On();
+					TMR3H=t0.HighB._byte;
+					TMR3L=t0.LowB._byte;
+					HH++;
+					break;
+		 case 1:	PWM_1_Off();PWM_2_On();
+					TMR3H=t1.HighB._byte;
+					TMR3L=t1.LowB._byte;
+					HH++;
+					break;
+		 case 2:	PWM_2_Off();
+					TMR3H=t2.HighB._byte;
+					TMR3L=t2.LowB._byte;
+					HH=0;
+					break;
+		}
+		
+
+
+
+}
+
+
 //==========================================================================
 /*BOOL Switch3IsPressed(void)
 {

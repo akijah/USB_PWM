@@ -87,7 +87,18 @@
 //#define mInitSwitch3()      TRISBbits.TRISB5=1;
 #define sw2                 PORTBbits.RB2
 //#define sw3                 PORTBbits.RB5
+//** PWM----------------------------------------------------------------
+//CCP1=RC2(pin13) CCP2=RC1(pin12) Led or RB3 (pin24)
+#define mInitPWM()          TRISCbits.TRISC2=0;TRISBbits.TRISB3=0;
+#define PWM_1              LATCbits.LATC2
+#define PWM_2              LATBbits.LATB3
 
+#define PWM_1_On()         PWM_1 = 1;
+#define PWM_1_Off()        PWM_1 = 0;
+#define PWM_1_Toggle()     PWM_1 = !PWM_1;
+#define PWM_2_On()         PWM_2 = 1;
+#define PWM_2_Off()        PWM_2 = 0;
+#define PWM_2_Toggle()     PWM_2 = !PWM_2;
 
 /** P O T ***********************************************************/
 #define mInitPOT()          TRISAbits.TRISA0=1;ADCON0=0x01;ADCON2=0x3C;
