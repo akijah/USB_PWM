@@ -12,7 +12,7 @@ byte old_sw2,old_sw3;
 #define Delay(x)  x*1.4997
 char input_buffer[64];
 char output_buffer[64];
-WORD  Imp0,Imp1,Imp2;
+WORD  T,D1,D2;
 WORD  t0,t1,t2;
 byte HH;
 rom char welcome[]={"Full-Speed USB - CDC RS-232 Emulation Demo\r\n\r\n"};
@@ -45,12 +45,12 @@ void UserInit(void)
 	
 	InitializePWM();
 	//Per._word=Delay(20000);//35542; //Период 20мс
-	Imp0._word=Delay(1500);
-	Imp1._word=Delay(1000);
-	Imp2._word=Delay(20000)-Imp0._word-Imp1._word;
-	t0._word=0xFFFF-Imp0._word;
-	t1._word=0xFFFF-Imp1._word;
-	t2._word=0xFFFF-Imp2._word;
+	D1._word=Delay(1500);
+	D2._word=Delay(1500);
+	T._word=Delay(20000);
+	t0._word=-D1._word;
+	t1._word=-D2._word;
+	t2._word=-T._word+D1._word+D2._word;
 	HH=0;
 //	mInitDACports();
 //	OpenSPI(SPI_FOSC_4, MODE_11, SMPMID);
@@ -118,6 +118,7 @@ void ProcessIO(void)
 {//	static byte Am = 0;
 	static byte wait=80;
 //	static byte K=0;
+	WORD Vv;
 	byte	Len;
  //  	char input_buffer[65];
 	//PWM_1_Toggle();		
@@ -126,55 +127,58 @@ void ProcessIO(void)
     if((usb_device_state < CONFIGURED_STATE)||(UCONbits.SUSPND==1)){ return;}//LED_1_On();
     
 
-		
-	//  if(wait == 0)wait = 10000U;
-//     wait--;
-//	if(wait==0)
-//	{
-
-
+   
 	if(getsUSBUSART(input_buffer, 64))
-	{	Len=mCDCGetRxLength();
-		if(Len>0)
-        { //PR2=input_buffer[0];
-		  Imp0._word=Delay(input_buffer[0]*10+1000);
-		  Imp2._word=Delay(20000)-Imp0._word-Imp1._word;
-	t0._word=0xFFFF-Imp0._word;
-	t1._word=0xFFFF-Imp1._word;
-	t2._word=0xFFFF-Imp2._word;
-
-
-
+	{	 Len=mCDCGetRxLength();
+		 if(Len==3)
+    	{  if(input_buffer[0]==0x01)
+		   { D1._word=Delay(*(int*)&input_buffer[1]);	
+			 LED_1_On(); 
+		   }	
+		   if(input_buffer[0]==0x02)
+		   { D2._word=Delay(*(int*)&input_buffer[1]);	
+			 LED_1_Off(); 
+		   }	
+		   if(input_buffer[0]==0x03)
+		   { T._word=Delay(*(int*)&input_buffer[1]);	
+			 LED_2_Toggle();
+		   }
+			t0._word=-D1._word;
+			t1._word=-D2._word;
+			t2._word=-T._word+D1._word+D2._word;			 	
+			//PR2=input_buffer[0];
+		  //Imp0._word=Delay(input_buffer[0]*10+1000);
+		  //Imp2._word=Delay(20000)-Imp0._word-Imp1._word;
+	//t0._word=0xFFFF-Imp0._word;
+	//t1._word=0xFFFF-Imp1._word;
+	//t2._word=0xFFFF-Imp2._word;
+			//output_buffer[1]=input_buffer[0];
+			//output_buffer[2]=input_buffer[1];
+		
+			
 			//TMR3H=input_buffer[1];
 		  //TMR3L=input_buffer[0];			
-			LED_1_Toggle();
-		 // if(mUSBUSARTIsTxTrfReady())
-    	 // {    mUSBUSARTTxRam((byte*)input_buffer,Len);
+		  	
+		 /* if(mUSBUSARTIsTxTrfReady())
+    	  {     output_buffer[0]=Len;
+				output_buffer[1]=input_buffer[0];
+				output_buffer[2]=input_buffer[1];
+				output_buffer[3]=input_buffer[2];//Vv.HighB._byte;
+			output_buffer[4]=D1.HighB._byte;
+			output_buffer[5]=D1.LowB._byte;
+			output_buffer[6]=t0.HighB._byte;
+			output_buffer[7]=t0.LowB._byte;
+			output_buffer[8]=t2.HighB._byte;
+			output_buffer[9]=t2.LowB._byte;
+		
+
+				mUSBUSARTTxRam((byte*)output_buffer,10);
 			
-		 // }
+		  }*/
 	     if(Switch2IsPressed())  LED_1_Toggle();  
-     }
-
-			
-/*************
-	if(getsUSBUSART(input_buffer, 64))
-	{	Len=mCDCGetRxLength();
-		input_buffer[Len]=Len;
-		if(mUSBUSARTIsTxTrfReady())
-    	{
-          mUSBUSARTTxRam((byte*)input_buffer,(Len+1));
-
 		}
      }
-**************/
-   // Exercise_Example();
-
- /*	if(mUSBUSARTIsTxTrfReady())
-    {
-        mUSBUSARTTxRam(&Am,1);
-		Am++;
-	};*/
-   }
+			
 }//end ProcessIO
 //-------------------------------------------------------------------------------
 void LoadDAC8522_A(WORD Val)

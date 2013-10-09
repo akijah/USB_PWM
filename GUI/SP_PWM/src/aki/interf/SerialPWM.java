@@ -66,7 +66,22 @@ public class SerialPWM
 			}
 		
 	}
-//--------------------------------------------------------------------------------------	
+
+	//----------------------------------------------------------------------------------------	
+		public boolean WriteBa(byte[] K)
+		{	if(!isOpen) return false;
+			try {
+				  serialPort.writeBytes(K);
+				  return true;
+				}
+				catch (SerialPortException ex) 
+				{        System.out.println(ex);
+						 return false;
+				}
+			
+		}
+	
+	//--------------------------------------------------------------------------------------	
 	public int ReadB()
 	{	if(!isOpen) return 0;
 		try {
@@ -98,19 +113,18 @@ public class SerialPWM
 	}
 	
 //--------------------------------------------------------------------------------------	
-	
-	
-	
-	
+		
 	 static class SerialPortReader implements SerialPortEventListener {
 
-	        public void serialEvent(SerialPortEvent event) {
-	            if(event.isRXCHAR()){//If data is available
-	                if(event.getEventValue() == 10){//Check bytes count in the input buffer
+	        public void serialEvent(SerialPortEvent event)
+	        {   int C;
+	            if(event.isRXCHAR())
+	            {		C=event.getEventValue();//If data is available
+	                if( C> 0){//Check bytes count in the input buffer
 	                    //Read data, if 10 bytes available 
 	                    try {
-	                        byte buffer[] = serialPort.readBytes(10);
-	                        for(int s=0; s<buffer.length; s++) System.out.println(buffer[s]);
+	                        byte buffer[] = serialPort.readBytes(C);
+	                        for(int s=0; s<buffer.length; s++) System.out.printf("%d 0x%02X ",s,buffer[s]);//System.out.print(Integer.toHexString(buffer[s]&0xFF)+" ");
 	                    }
 	                    catch (SerialPortException ex) {
 	                        System.out.println(ex);

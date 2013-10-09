@@ -60,6 +60,7 @@ class GrPan extends JPanel implements ChangeListener, ActionListener
 	 JComboBox<String> PortSelect;
 	 JButton ConnectBut;
 	 JButton BM100,BM10,BDef,BP100,BP10;
+	 JButton BM1002,BM102,BDef2,BP1002,BP102;
 	public GrPan()
 	{	super(true);
 		
@@ -95,10 +96,10 @@ class GrPan extends JPanel implements ChangeListener, ActionListener
 		setBackground(Color.LIGHT_GRAY);
 		setBorder(BorderFactory.createEmptyBorder(12, 12, 12,12));
 	//----------------------------------------------------------------	
-		JLabel PWMCap1=new JLabel("PWM Canal 1");
-        PWMCap1.setBounds(5, 2, 140, 30);
-        PWMCap1.setFont(new Font("Arial",Font.BOLD,15));
-        add(PWMCap1);
+		JLabel PWMCap=new JLabel("PWM Canal 1");
+        PWMCap.setBounds(5, 2, 140, 30);
+        PWMCap.setFont(new Font("Arial",Font.BOLD,15));
+        add(PWMCap);
         
 		SlPWM1=new JSlider(JSlider.HORIZONTAL,0,100,0);
 		SlPWM1.setMinorTickSpacing(2);
@@ -140,7 +141,52 @@ class GrPan extends JPanel implements ChangeListener, ActionListener
         BP100.addActionListener(this);
         add(BP100);
         
-        
+      //----------------------------------------------------------------	
+      		 PWMCap=new JLabel("PWM Canal 2");
+             PWMCap.setBounds(5, 102, 140, 30);
+             PWMCap.setFont(new Font("Arial",Font.BOLD,15));
+             add(PWMCap);
+              
+      		SlPWM2=new JSlider(JSlider.HORIZONTAL,0,100,0);
+      		SlPWM2.setMinorTickSpacing(2);
+      		SlPWM2.setMajorTickSpacing(10);
+      		SlPWM2.setPaintTicks(true);
+      		//SlPWM1.setPaintLabels(false);
+      		//SlPWM1.setLabelTable(SlPWM1.createStandardLabels(10));
+      		SlPWM2.setBounds(2, 134, 250, 30);
+      		SlPWM2.setBorder(BorderFactory.createCompoundBorder());
+      		SlPWM2.addChangeListener(this);
+            add(SlPWM2);//, BorderLayout.CENTER
+              
+            PWMVal2=new JLabel();
+            PWMVal2.setBounds(150, 102, 100, 30);
+              
+            PWMVal2.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+            PWMVal2.setHorizontalAlignment(SwingConstants.CENTER);
+            add(PWMVal2);
+      	
+            BM1002=new JButton("<<");
+            BM1002.setBounds(2,166, 48, 30);
+            BM1002.addActionListener(this);
+            add(BM1002);
+             
+              BM102=new JButton("<");
+              BM102.setBounds(52,166, 48, 30);
+              BM102.addActionListener(this);
+              add(BM102);
+              BDef2=new JButton("D");
+              BDef2.setBounds(102,166, 48, 30);
+              BDef2.addActionListener(this);
+              add(BDef2);
+              BP102=new JButton(">");
+              BP102.setBounds(152,166, 48, 30);
+              BP102.addActionListener(this);
+              add(BP102);
+              BP1002=new JButton(">>");
+              BP1002.setBounds(202,166, 48, 30);
+              BP1002.addActionListener(this);
+              add(BP1002);
+              
      //----------------------------------------------------------------   
        /* SlPWM2=new JSlider(JSlider.HORIZONTAL,0,100,0);
 		SlPWM2.setMinorTickSpacing(2);
@@ -163,7 +209,7 @@ class GrPan extends JPanel implements ChangeListener, ActionListener
         
         
         SlPWM1.setValue(50);
-       // SlPWM2.setValue(50);
+        SlPWM2.setValue(50);
         //ll.setCursor(Cursor.HAND_CURSOR);
 		//ll.setBounds(10, 10, 100, 40);
 		//add(sl);
@@ -175,12 +221,17 @@ class GrPan extends JPanel implements ChangeListener, ActionListener
 		 {Val=SlPWM1.getValue()*10+1000;
 		  System.out.println("Sl1:"+Val);
 		  PWMVal1.setText(Val+" ms");
-		  ser.WriteB((byte)SlPWM1.getValue());
+		  //ser.WriteB((byte)0x01);
+		  //ser.WriteB((byte)SlPWM1.getValue());
+		  ser.WriteBa(new byte[]{(byte)0x01,(byte)Val,(byte)(Val>>8)});
 		 }
 		 if(ce.getSource()==SlPWM2)	
 		 {	Val=SlPWM2.getValue()*10+1000;
 		    System.out.println("Sl2:"+Val);
 		    PWMVal2.setText(Val+" ms");
+		   // ser.WriteB((byte)0x02);
+			//ser.WriteB((byte)SlPWM2.getValue());
+		    ser.WriteBa(new byte[]{(byte)0x02,(byte)Val,(byte)(Val>>8)});   
 		 }
 		
 		 //getColorSelectionModel().setSelectedColor(grays[scale.getValue()]);
@@ -188,20 +239,24 @@ class GrPan extends JPanel implements ChangeListener, ActionListener
 	 }	
 	 
 	 public void actionPerformed(ActionEvent ae)
-	 {	 int V=SlPWM1.getValue();
+	 {	 int V1=SlPWM1.getValue();
+	 	 int V2=SlPWM2.getValue();
+	 	 
+	 	 if(ae.getSource()==BM100) 	V1-=10;
+		 if(ae.getSource()==BM10) 	V1--;
+		 if(ae.getSource()==BDef)	V1=50;  
+		 if(ae.getSource()==BP10)   V1++;
+		 if(ae.getSource()==BP100)	V1+=10;
 		 
-	 	 if(ae.getSource()==BM100) 	V-=10;
-		 	
-		 if(ae.getSource()==BM10) 	V--;
-		 	
-		 if(ae.getSource()==BDef)	V=50;  
-		 	
-		 if(ae.getSource()==BP10)   V++;
-		
-		 if(ae.getSource()==BP100)	V+=10;
+		 if(ae.getSource()==BM1002) V2-=10;
+		 if(ae.getSource()==BM102) 	V2--;
+		 if(ae.getSource()==BDef2)	V2=50;  
+		 if(ae.getSource()==BP102)  V2++;
+		 if(ae.getSource()==BP1002)	V2+=10;
 		 
-		 SlPWM1.setValue(V);
 		 
+		 SlPWM1.setValue(V1);
+		 SlPWM2.setValue(V2);
 		 
 		 
 		 
